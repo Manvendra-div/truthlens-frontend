@@ -102,7 +102,7 @@ export function Navbar() {
               TruthLens
             </span>
             <span className="hidden text-xs text-muted-foreground sm:inline">
-              See the story behind the story
+              See the truth behind the story
             </span>
           </div>
         </Link>

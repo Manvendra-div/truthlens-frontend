@@ -48,7 +48,7 @@ export function PostCard({ post, compact }: PostCardProps) {
   return (
     <Card className="group border-border/70 bg-card/70 backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md">
       <CardHeader className="gap-1 pb-3">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-4">
           <div className="space-y-1">
             <CardTitle className="text-base md:text-lg">
               <Link href={`/post/${post.id}`} className="hover:underline">
