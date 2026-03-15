@@ -31,7 +31,7 @@ export function CommentItem({
   return (
     <li className="flex gap-2.5">
       <div className="bg-accent rounded-full p-2 h-fit w-fit">
-        <User2 className="w-6 h-6" />
+        <User2 className="w-6 h-6 stroke-1" />
       </div>
       <div className="w-full text-sm">
         <div className="flex items-center gap-2 p-1">

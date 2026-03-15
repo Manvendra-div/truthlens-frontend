@@ -9,7 +9,8 @@ import { runPrediction } from "@/lib/api";
 import type { Prediction } from "@/types/prediction";
 import { toast } from "sonner";
 import Link from "next/link";
-import { Globe, Globe2, Newspaper } from "lucide-react";
+import { Newspaper } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   const [demoText, setDemoText] = useState("");
@@ -93,14 +94,15 @@ export default function Home() {
           </CardContent>
         </Card>
       </section>
-      <dl className="grid grid-cols-2 gap-4 text-xs text-muted-foreground md:text-sm">
+      <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-muted-foreground md:text-sm">
         <div className="sm:col-span-12 overflow-hidden rounded-md border border-transparent hover:border-border hover:bg-card transition duration-300">
-          <div className="relative h-52 w-full mask-y-from-50%">
-            <div className="absolute bg-accent/20 top-10 left-10 p-4 h-52 border w-[60%] rounded-md">
-              <span className="text-xl flex gap-2 items-center text-foreground font-medium leading-tight">
-                 <Newspaper/> Apple Invites App Updated, Here's What's New
+          <div className="relative h-52 w-full mask-y-from-50% mask-x-from-90% select-none">
+            <Image alt="" height={800} width={800} src={"/grid.svg"} className="-z-10 w-full"/>
+            <div className="absolute bg-background top-10 left-8 sm:left-10 p-4 h-52 border w-80 sm:w-[60%] rounded-md z-10">
+              <span className="text-sm sm:text-lg flex gap-2 items-center text-foreground font-medium leading-tight">
+                 <Newspaper className="stroke-2 w-6 h-6"/> Apple Invites App Updated, Here's What's New
               </span>
-              <p className="text-base leading-relaxed mt-2">
+              <p className="text-xs sm:text-base leading-relaxed mt-2">
                 With the latest version of the Apple Invites app on the iPhone,
                 released today, the app's Home Screen widget has received a
                 small but useful enhancement.In August, the app
@@ -109,7 +111,7 @@ export default function Home() {
               </p>
             
             </div>
-            <div className="scale-125 absolute bottom-10 right-20 w-72">
+            <div className="scale-90 sm:scale-125 absolute bottom-5 sm:bottom-10 -right-10 sm:right-20 w-72 z-10">
               <PredictionBadge
                 decoy={true}
                 prediction={{
