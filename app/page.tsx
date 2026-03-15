@@ -2,18 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PredictionBadge } from "@/components/prediction-badge";
 import { useState } from "react";
 import { runPrediction } from "@/lib/api";
 import type { Prediction } from "@/types/prediction";
 import { toast } from "sonner";
 import Link from "next/link";
+import { Globe, Globe2, Newspaper } from "lucide-react";
 
 export default function Home() {
   const [demoText, setDemoText] = useState("");
@@ -61,33 +57,6 @@ export default function Home() {
               <Link href="/feed">View community feed</Link>
             </Button>
           </div>
-
-          <dl className="grid grid-cols-2 gap-4 text-xs text-muted-foreground md:text-sm">
-            <div>
-              <dt className="font-medium text-foreground">
-                AI fake news detection
-              </dt>
-              <dd>
-                Fine-tuned BERT model flags suspicious claims with confidence
-                scores.
-              </dd>
-            </div>
-            <div>
-              <dt className="font-medium text-foreground">
-                Community discussion
-              </dt>
-              <dd>Threaded comments, likes, and reactions on every post.</dd>
-            </div>
-            <div>
-              <dt className="font-medium text-foreground">
-                Crowdsourced verification
-              </dt>
-              <dd>
-                Surface trustworthy sources and challenge misleading narratives
-                together.
-              </dd>
-            </div>
-          </dl>
         </div>
 
         <Card className="border-border/70 bg-card/80 shadow-lg">
@@ -124,6 +93,56 @@ export default function Home() {
           </CardContent>
         </Card>
       </section>
+      <dl className="grid grid-cols-2 gap-4 text-xs text-muted-foreground md:text-sm">
+        <div className="sm:col-span-12 overflow-hidden rounded-md border border-transparent hover:border-border hover:bg-card transition duration-300">
+          <div className="relative h-52 w-full mask-y-from-50%">
+            <div className="absolute bg-accent/20 top-10 left-10 p-4 h-52 border w-[60%] rounded-md">
+              <span className="text-xl flex gap-2 items-center text-foreground font-medium leading-tight">
+                 <Newspaper/> Apple Invites App Updated, Here's What's New
+              </span>
+              <p className="text-base leading-relaxed mt-2">
+                With the latest version of the Apple Invites app on the iPhone,
+                released today, the app's Home Screen widget has received a
+                small but useful enhancement.In August, the app
+                gained a Home Screen widget that counts down the days until an
+                upcoming event
+              </p>
+            
+            </div>
+            <div className="scale-125 absolute bottom-10 right-20 w-72">
+              <PredictionBadge
+                decoy={true}
+                prediction={{
+                  label: "Real",
+                  fake_confidence: 35.46,
+                  real_confidence: 64.54,
+                }}
+              />
+            </div>
+          </div>
+
+          <dt className="font-medium text-foreground px-4">
+            AI fake news detection
+          </dt>
+          <dd className="px-4 mb-4">
+            Fine-tuned BERT model flags suspicious claims with confidence
+            scores.
+          </dd>
+        </div>
+        <div className="sm:col-span-6 p-4 rounded-md border border-transparent hover:border-border hover:bg-card transition duration-300">
+          <dt className="font-medium text-foreground">Community discussion</dt>
+          <dd>Threaded comments, likes, and reactions on every post.</dd>
+        </div>
+        <div className="sm:col-span-6 p-4 rounded-md border border-transparent hover:border-border hover:bg-card transition duration-300">
+          <dt className="font-medium text-foreground">
+            Crowdsourced verification
+          </dt>
+          <dd>
+            Surface trustworthy sources and challenge misleading narratives
+            together.
+          </dd>
+        </div>
+      </dl>
 
       <section className="grid grid-cols-1 gap-6 border-t pt-8 md:grid-cols-3">
         <div className="space-y-2">
@@ -157,4 +176,3 @@ export default function Home() {
     </div>
   );
 }
-
