@@ -95,8 +95,8 @@ export default function Home() {
         </Card>
       </section>
       <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-muted-foreground md:text-sm">
-        <div className="sm:col-span-12 overflow-hidden rounded-md border border-transparent hover:border-border hover:bg-card transition duration-300">
-          <div className="relative h-52 w-full mask-y-from-50% mask-x-from-90% select-none">
+        <div className="sm:col-span-12 overflow-hidden rounded-md border shadow hover:border-primary hover:bg-card transition-all duration-300">
+          <div className="relative h-52 w-full mask-y-from-60% mask-x-from-96% select-none">
             <Image alt="" height={800} width={800} src={"/grid.svg"} className="-z-10 w-full"/>
             <div className="absolute bg-background top-10 left-8 sm:left-10 p-4 h-52 border w-80 sm:w-[60%] rounded-md z-10">
               <span className="text-sm sm:text-lg flex gap-2 items-center text-foreground font-medium leading-tight">
@@ -131,11 +131,11 @@ export default function Home() {
             scores.
           </dd>
         </div>
-        <div className="sm:col-span-6 p-4 rounded-md border border-transparent hover:border-border hover:bg-card transition duration-300">
+        <div className="sm:col-span-6 p-4 rounded-md border shadow hover:border-primary hover:bg-card transition duration-300">
           <dt className="font-medium text-foreground">Community discussion</dt>
           <dd>Threaded comments, likes, and reactions on every post.</dd>
         </div>
-        <div className="sm:col-span-6 p-4 rounded-md border border-transparent hover:border-border hover:bg-card transition duration-300">
+        <div className="sm:col-span-6 p-4 rounded-md border shadow hover:border-primary hover:bg-card transition duration-300">
           <dt className="font-medium text-foreground">
             Crowdsourced verification
           </dt>
