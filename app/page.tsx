@@ -38,7 +38,7 @@ export default function Home() {
         <AiDemo/>
       </section>
       <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-muted-foreground md:text-sm">
-        <div className="sm:col-span-12 rounded-md border hover:border-primary hover:bg-card transition-all duration-300">
+        <div className="sm:col-span-12 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden">
           <div className="relative h-52 w-full mask-y-from-60% mask-x-from-96% select-none">
             <Image
               alt=""
