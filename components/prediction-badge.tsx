@@ -1,3 +1,5 @@
+"use client"
+
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import type { Prediction } from "@/types/prediction";
@@ -34,7 +36,7 @@ export function PredictionBadge({
 
   if (decoy) {
     return (
-      <div className="flex flex-col gap-2  border bg-card border-border/70 rounded-md p-4 hover:shadow-sm transition-shadow">
+      <div className="flex flex-col gap-2 min-w-40  border bg-card border-border/70 rounded-md p-4 hover:shadow-sm transition-shadow">
         <div className="flex items-start gap-2">
           <Badge
             variant={isReal ? "success" : "destructive"}
@@ -53,7 +55,7 @@ export function PredictionBadge({
     return (
       <Popover defaultOpen>
         <PopoverTrigger asChild>
-          <div className="flex flex-col gap-2  border bg-card border-border/70 rounded-md p-4 hover:shadow-sm transition-shadow">
+          <div className="flex flex-col gap-2 min-w-40 border bg-card border-border/70 rounded-md p-4 hover:shadow-sm transition-shadow">
             <div className="flex items-start gap-2">
               <Badge
                 variant={isReal ? "success" : "destructive"}
