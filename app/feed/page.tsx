@@ -1,5 +1,3 @@
-"use client";
-
 import { PostFeed } from "@/components/posts/post-feed";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";

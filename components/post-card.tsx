@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { MessageCircle, Share2, ThumbsUp } from "lucide-react";
 import {
@@ -30,7 +32,9 @@ export function PostCard({ post, compact }: PostCardProps) {
     mutationFn: likePost,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: postsKeys.list() });
-      queryClient.invalidateQueries({ queryKey: postsKeys.detail(post.id.toString()) });
+      queryClient.invalidateQueries({
+        queryKey: postsKeys.detail(post.id.toString()),
+      });
     },
     onError: () => {
       toast.error("Unable to like post right now.");
@@ -116,4 +120,3 @@ export function PostCard({ post, compact }: PostCardProps) {
     </Card>
   );
 }
-
