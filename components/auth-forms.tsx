@@ -6,12 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { login, signup, getGoogleLoginUrl } from "@/lib/api";
+import { login, signup } from "@/lib/api";
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
 import Link from "next/link";
 import { Mail, Lock, User, Chrome } from "lucide-react";
-import { useGoogleAuth } from "@/hooks/useGoogleAuth";
 import { signIn } from "next-auth/react";
 
 type AuthMode = "login" | "signup";
@@ -29,8 +28,6 @@ export function AuthCard({ mode }: BaseProps) {
   const [username, setUsername] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
-
-  useGoogleAuth();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -58,8 +55,7 @@ export function AuthCard({ mode }: BaseProps) {
   const handleGoogle = async () => {
     setIsGoogleLoading(true);
     try {
-      const { url } = await getGoogleLoginUrl();
-      window.location.href = url;
+      await signIn("google", { callbackUrl: "/auth/callback" });
     } catch {
       toast.error("Unable to start Google login.");
       setIsGoogleLoading(false);
@@ -164,7 +160,7 @@ export function AuthCard({ mode }: BaseProps) {
             type="button"
             variant="outline"
             className="w-full"
-             onClick={() => signIn("google", { callbackUrl: "/login" })}
+            onClick={handleGoogle}
             disabled={isGoogleLoading}
           >
             <Chrome className="mr-2 h-4 w-4" />

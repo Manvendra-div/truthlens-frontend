@@ -12,7 +12,6 @@ const handler = NextAuth({
   ],
 
   callbacks: {
-    // attach the Google id_token to the NextAuth session
     async jwt({ token, account }) {
       if (account?.id_token) {
         token.idToken = account.id_token;
@@ -24,10 +23,13 @@ const handler = NextAuth({
       session.idToken = token.idToken as string;
       return session;
     },
-  },
 
-  pages: {
-    signIn: "/login",
+    async redirect({ url, baseUrl }) {
+      // always honor the callbackUrl if it's on the same origin
+      if (url.startsWith("/")) return `${baseUrl}${url}`;
+      if (url.startsWith(baseUrl)) return url;
+      return `${baseUrl}/auth/callback`;
+    },
   },
 });
 

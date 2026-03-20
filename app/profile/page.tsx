@@ -1,6 +1,6 @@
 "use client";
 
-import { PostCard } from "@/components/post-card";
+import { PostCard } from "@/components/posts/post-card";
 import { FeedSkeleton } from "@/components/loading-skeleton";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
