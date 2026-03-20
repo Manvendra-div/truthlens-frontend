@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Providers>
           <div className="flex min-h-screen flex-col">
             <Navbar />
-            <main className="flex-1 bg-gradient-to-b from-background to-muted/40">
+            <main className="flex-1 bg-linear-to-b from-background to-muted/40">
               {children}
             </main>
             <footer className="border-t bg-background/80">

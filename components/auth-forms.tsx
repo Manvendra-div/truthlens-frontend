@@ -11,6 +11,8 @@ import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
 import Link from "next/link";
 import { Mail, Lock, User, Chrome } from "lucide-react";
+import { useGoogleAuth } from "@/hooks/useGoogleAuth";
+import { signIn } from "next-auth/react";
 
 type AuthMode = "login" | "signup";
 
@@ -27,6 +29,8 @@ export function AuthCard({ mode }: BaseProps) {
   const [username, setUsername] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+
+  useGoogleAuth();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -160,7 +164,7 @@ export function AuthCard({ mode }: BaseProps) {
             type="button"
             variant="outline"
             className="w-full"
-            onClick={handleGoogle}
+             onClick={() => signIn("google", { callbackUrl: "/login" })}
             disabled={isGoogleLoading}
           >
             <Chrome className="mr-2 h-4 w-4" />
