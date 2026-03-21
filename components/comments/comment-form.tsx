@@ -29,6 +29,11 @@ export function CommentForm({ postId }: CommentFormProps) {
         toast.info("Log in to comment.");
         throw new Error("Not authenticated");
       }
+      
+      if(!user){
+         toast.info("Log in to comment.");
+         throw new Error("Not authenticated");
+      }
 
       await queryClient.cancelQueries({ queryKey: commentsKey(postId) });
       const previous = queryClient.getQueryData<Comment[]>(commentsKey(postId));
@@ -39,6 +44,7 @@ export function CommentForm({ postId }: CommentFormProps) {
         user_id: user?.id ? Number(user.id) : 0,
         post_id: Number(postId),
         created_at: new Date().toISOString(),
+        user
       };
 
       queryClient.setQueryData<Comment[]>(commentsKey(postId), (existing) =>
