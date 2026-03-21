@@ -78,7 +78,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="h-20 flex flex-col justify-end overflow-hidden px-4 pt-0 pb-4">
+            <div className="h-24 sm:h-20 flex flex-col justify-end overflow-hidden px-4 pt-0 pb-4">
               <dt className="font-medium text-base sm:text-lg text-foreground transition-all duration-500 group-hover:-translate-y-1 pt-4">
                 AI fake news detection
               </dt>
