@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { PredictionBadge } from "@/components/prediction-badge";
 import Link from "next/link";
-import { Newspaper } from "lucide-react";
+import { Cuboid, Lock, Newspaper, Users2 } from "lucide-react";
 import Image from "next/image";
 import AiDemo from "@/components/ai-demo";
+import FeaturesSection from "@/components/feature-section";
 
 export default function Home() {
   return (
@@ -37,8 +38,11 @@ export default function Home() {
         </div>
         <AiDemo />
       </section>
-      <section className="flex flex-col gap-4 my-12 sm:my-20">
-        <h1 className="text-xl font-medium tracking-tight sm:text-3xl text-muted-foreground">Everything you need to spot the <span className="text-foreground">truth</span></h1>
+      <section className="flex flex-col gap-4 my-6 sm:my-8">
+        <h1 className="text-xl font-semibold tracking-tight sm:text-3xl text-muted-foreground">
+          Everything you need to spot the{" "}
+          <span className="text-foreground">truth</span>
+        </h1>
         <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-muted-foreground md:text-sm">
           <div className="sm:col-span-12 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden bg-accent/40 group">
             <div className="relative h-52 w-full mask-y-from-60% mask-x-from-96% select-none">
@@ -102,35 +106,30 @@ export default function Home() {
         </dl>
       </section>
 
-      <section className="grid grid-cols-1 gap-6 border-t pt-8 md:grid-cols-3">
-        <div className="space-y-2">
-          <h2 className="text-sm font-semibold tracking-tight md:text-base">
-            Built for modern newsrooms
-          </h2>
-          <p className="text-xs text-muted-foreground md:text-sm">
-            Track breaking stories, detect coordinated misinformation, and share
-            transparent evidence with your audience.
-          </p>
+      {/* <section className="my-8 sm:my-12">
+        <div className="border rounded-md p-4 flex flex-col gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 ">
+            <div className="space-y-2 p-4 border rounded-md text-center">
+              <h2 className="inline-flex items-center text-sm font-semibold tracking-tight md:text-base">
+                <Cuboid className="w-5 h-5 mr-2" /> Built for modern newsrooms
+              </h2>
+            </div>
+            <div className="space-y-2 p-4 border rounded-md text-center">
+              <h2 className="inline-flex items-center text-sm font-semibold tracking-tight md:text-base">
+                <Users2 className="w-5 h-5 mr-2" /> Designed for readers
+              </h2>
+            </div>
+            <div className="space-y-2 p-4 border rounded-md text-center">
+              <h2 className="inline-flex items-center text-sm font-semibold tracking-tight md:text-base">
+                <Lock className="w-5 h-5 mr-2" /> Privacy-respecting by default
+              </h2>
+            </div>
+          </div>
+          <div className="border rounded-md h-40 p-4">Track breaking stories, detect coordinated misinformation, and
+              share transparent evidence with your audience.</div>
         </div>
-        <div className="space-y-2">
-          <h2 className="text-sm font-semibold tracking-tight md:text-base">
-            Designed for readers
-          </h2>
-          <p className="text-xs text-muted-foreground md:text-sm">
-            Follow topics, bookmark posts, and see confidence scores before you
-            share.
-          </p>
-        </div>
-        <div className="space-y-2">
-          <h2 className="text-sm font-semibold tracking-tight md:text-base">
-            Privacy-respecting by default
-          </h2>
-          <p className="text-xs text-muted-foreground md:text-sm">
-            Your analysis history lives in your account. We never sell or resell
-            your reading patterns.
-          </p>
-        </div>
-      </section>
+      </section> */}
+      <FeaturesSection/>
     </div>
   );
 }
