@@ -35,10 +35,10 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <AiDemo/>
+        <AiDemo />
       </section>
       <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-muted-foreground md:text-sm">
-        <div className="sm:col-span-12 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden">
+        <div className="sm:col-span-12 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden bg-accent/40 group">
           <div className="relative h-52 w-full mask-y-from-60% mask-x-from-96% select-none">
             <Image
               alt=""
@@ -71,19 +71,21 @@ export default function Home() {
             </div>
           </div>
 
-          <dt className="font-medium text-foreground px-4">
-            AI fake news detection
-          </dt>
-          <dd className="px-4 mb-4">
-            Fine-tuned BERT model flags suspicious claims with confidence
-            scores.
-          </dd>
+          <div className="h-16 flex flex-col justify-end overflow-hidden px-4 pt-0 pb-4">
+            <dt className="font-medium text-foreground transition-all duration-500 group-hover:-translate-y-1 pt-4">
+              AI fake news detection
+            </dt>
+            <dd className="max-h-0 group-hover:max-h-12 overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out text-xs text-muted-foreground">
+              Fine-tuned BERT model flags suspicious claims with confidence
+              scores.
+            </dd>
+          </div>
         </div>
-        <div className="sm:col-span-6 p-4 rounded-md border hover:border-primary hover:bg-card transition duration-300">
+        <div className="sm:col-span-6 p-4 rounded-md border hover:border-primary hover:bg-card transition duration-300 bg-accent/40">
           <dt className="font-medium text-foreground">Community discussion</dt>
           <dd>Threaded comments, likes, and reactions on every post.</dd>
         </div>
-        <div className="sm:col-span-6 p-4 rounded-md border hover:border-primary hover:bg-card transition duration-300">
+        <div className="sm:col-span-6 p-4 rounded-md border hover:border-primary hover:bg-card transition duration-300 bg-accent/40">
           <dt className="font-medium text-foreground">
             Crowdsourced verification
           </dt>
