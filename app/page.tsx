@@ -74,11 +74,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="h-16 flex flex-col justify-end overflow-hidden px-4 pt-0 pb-4">
+            <div className="h-20 flex flex-col justify-end overflow-hidden px-4 pt-0 pb-4">
               <dt className="font-medium text-foreground transition-all duration-500 group-hover:-translate-y-1 pt-4">
                 AI fake news detection
               </dt>
-              <dd className="max-h-0 group-hover:max-h-12 overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out text-xs text-muted-foreground">
+              <dd className="max-h-0 group-hover:max-h-12 overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out text-xs sm:text-sm text-muted-foreground">
                 Fine-tuned BERT model flags suspicious claims with confidence
                 scores.
               </dd>
