@@ -79,7 +79,7 @@ export default function Home() {
             </div>
 
             <div className="h-20 flex flex-col justify-end overflow-hidden px-4 pt-0 pb-4">
-              <dt className="font-medium text-foreground transition-all duration-500 group-hover:-translate-y-1 pt-4">
+              <dt className="font-medium text-base sm:text-lg text-foreground transition-all duration-500 group-hover:-translate-y-1 pt-4">
                 AI fake news detection
               </dt>
               <dd className="max-h-0 group-hover:max-h-12 overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out text-xs sm:text-sm text-muted-foreground">
@@ -106,29 +106,6 @@ export default function Home() {
         </dl>
       </section>
 
-      {/* <section className="my-8 sm:my-12">
-        <div className="border rounded-md p-4 flex flex-col gap-4">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 ">
-            <div className="space-y-2 p-4 border rounded-md text-center">
-              <h2 className="inline-flex items-center text-sm font-semibold tracking-tight md:text-base">
-                <Cuboid className="w-5 h-5 mr-2" /> Built for modern newsrooms
-              </h2>
-            </div>
-            <div className="space-y-2 p-4 border rounded-md text-center">
-              <h2 className="inline-flex items-center text-sm font-semibold tracking-tight md:text-base">
-                <Users2 className="w-5 h-5 mr-2" /> Designed for readers
-              </h2>
-            </div>
-            <div className="space-y-2 p-4 border rounded-md text-center">
-              <h2 className="inline-flex items-center text-sm font-semibold tracking-tight md:text-base">
-                <Lock className="w-5 h-5 mr-2" /> Privacy-respecting by default
-              </h2>
-            </div>
-          </div>
-          <div className="border rounded-md h-40 p-4">Track breaking stories, detect coordinated misinformation, and
-              share transparent evidence with your audience.</div>
-        </div>
-      </section> */}
       <FeaturesSection/>
     </div>
   );
