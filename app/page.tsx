@@ -38,14 +38,14 @@ export default function Home() {
         </div>
         <AiDemo />
       </section>
-      <section className="flex flex-col gap-4 my-6 sm:my-8">
+      <section className="flex flex-col gap-4 mt-10 sm:mt-20 mb-6 sm:mb-8">
         <h1 className="text-xl font-semibold tracking-tight sm:text-3xl text-muted-foreground">
           Everything you need to spot the{" "}
           <span className="text-foreground">truth</span>
         </h1>
         <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-muted-foreground md:text-sm">
           <div className="sm:col-span-12 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden bg-accent/40 group">
-            <div className="relative h-52 w-full mask-y-from-60% mask-x-from-96% select-none">
+            <div className="relative h-42 sm:h-52 w-full mask-y-from-60% mask-x-from-96% select-none">
               <Image
                 alt=""
                 height={800}
@@ -53,7 +53,7 @@ export default function Home() {
                 src={"/grid.svg"}
                 className="absolute -top-10 -z-10 w-full h-auto"
               />
-              <div className="absolute bg-background top-10 left-8 sm:left-10 p-4 h-52 border w-80 sm:w-[60%] rounded-md z-10">
+              <div className="absolute bg-background top-10 left-8 sm:left-10 p-4 h-52 border w-112.5 sm:w-[60%] rounded-md z-10">
                 <span className="text-sm sm:text-lg flex gap-2 items-center text-foreground font-medium leading-tight">
                   <Newspaper className="stroke-2 w-6 h-6" /> Apple Invites App
                   Updated, Here's What's New
