@@ -1,21 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { PredictionBadge } from "@/components/prediction-badge";
 import Link from "next/link";
-import { Cuboid, Lock, Newspaper, Users2 } from "lucide-react";
+import { ArrowUpRight, Newspaper } from "lucide-react";
 import Image from "next/image";
 import AiDemo from "@/components/ai-demo";
 import FeaturesSection from "@/components/feature-section";
 
 export default function Home() {
   return (
-    <div className="mx-auto flex max-w-5xl flex-col gap-10 px-4 py-10 md:px-6 md:py-14">
-      <section className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+    <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 md:px-6 md:py-14">
+      <section className="grid grid-cols-1 items-center gap-10 justify-center">
         <div className="space-y-6">
           <div className="space-y-3">
             <p className="inline-flex rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-primary/10">
               AI + community to fact-check your feed
             </p>
-            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
+            <h1 className="text-3xl font-semibold tracking-tight md:text-6xl">
               Shine a light on misinformation with{" "}
               <span className="text-primary">TruthLens</span>.
             </h1>
@@ -28,15 +28,22 @@ export default function Home() {
           </div>
 
           <div className="flex flex-wrap gap-3">
+            <AiDemo>
+              <Button
+                size="lg"
+                className="px-6 bg-linear-to-r from-primary to-indigo-500 outline-2 outline-offset-4 outline-primary"
+              >
+                Try AI Prediction <ArrowUpRight/>
+              </Button>
+            </AiDemo>
             <Button asChild size="lg" className="px-6">
-              <Link href="/create">Start analyzing news</Link>
+              <Link href="/create">Start an article</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="px-6">
               <Link href="/feed">View community feed</Link>
             </Button>
           </div>
         </div>
-        <AiDemo />
       </section>
       <section className="flex flex-col gap-4 mt-10 sm:mt-20 mb-6 sm:mb-8">
         <h1 className="text-xl font-semibold tracking-tight sm:text-3xl text-muted-foreground">

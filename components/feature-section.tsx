@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const tabs = {
   newsroom: {
     tag: "For publishers",
-    tagClass: "bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300",
+    tagClass: "bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300 border-1 border-blue-700 dark:border-blue-300",
     title:
       "Track breaking stories, detect coordinated misinformation, and share transparent evidence with your audience.",
     body: "TruthLens plugs directly into your workflow — flag suspicious articles before publication, monitor trending claims in real time, and build reader trust with transparent AI credibility scores.",
@@ -19,7 +19,7 @@ const tabs = {
   readers: {
     tag: "For the community",
     tagClass:
-      "bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300",
+      "bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300 border-1 border-green-700 dark:border-green-300",
     title: "Read smarter. Question more. Contribute to the truth.",
     body: "Every post on TruthLens comes with an AI credibility badge — real vs fake, with confidence scores. Like posts, leave comments, and help surface reliable journalism through collective signal.",
     stats: [
@@ -31,7 +31,7 @@ const tabs = {
   privacy: {
     tag: "Privacy first",
     tagClass:
-      "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-300",
+      "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-300 border-1 border-amber-700 dark:border-amber-300",
     title:
       "Your data stays yours. No trackers, no ad targeting, no selling your activity.",
     body: "Authentication uses HTTP-only JWT cookies — never exposed to JavaScript. Passwords are SHA-256 prehashed before bcrypt. No third-party analytics or advertising SDKs are included.",
@@ -100,8 +100,8 @@ export default function FeaturesSection() {
           >
             {t.tag}
           </span>
-          <p className="text-sm font-medium leading-relaxed mb-2">{t.title}</p>
-          <p className="text-xs text-muted-foreground leading-relaxed">
+          <p className="text-base font-medium leading-relaxed mb-2">{t.title}</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">
             {t.body}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 mt-4 sm:h-40 bg-linear-to-b from-accent via-transparent to-accent rounded-md border">

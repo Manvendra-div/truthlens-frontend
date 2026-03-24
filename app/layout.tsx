@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               {children}
             </main>
             <footer className="border-t bg-background/80">
-              <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-6 text-xs text-muted-foreground md:px-6">
+              <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 text-xs text-muted-foreground md:px-6">
                 <span>© {new Date().getFullYear()} TruthLens</span>
                 <span>AI-powered fake news detection &amp; discussion.</span>
               </div>

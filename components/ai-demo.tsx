@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { PredictionBadge } from "./prediction-badge";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
@@ -8,8 +8,16 @@ import { Input } from "./ui/input";
 import { Prediction } from "@/types/prediction";
 import { runPrediction } from "@/lib/api";
 import { toast } from "sonner";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
 
-export default function AiDemo() {
+export default function AiDemo({ children }: { children: ReactNode }) {
   const [demoText, setDemoText] = useState("");
   const [prediction, setPrediction] = useState<Prediction | undefined>();
   const [isLoading, setIsLoading] = useState(false);
@@ -27,16 +35,18 @@ export default function AiDemo() {
     }
   };
   return (
-    <Card className="border-border/70 bg-card/80 shadow-lg">
-      <CardHeader className="pb-3">
-        <CardTitle className="text-base md:text-lg">
-          Try the prediction demo
-        </CardTitle>
-        <p className="text-xs text-muted-foreground md:text-sm">
-          Paste a headline or short paragraph and see how TruthLens scores it.
-        </p>
-      </CardHeader>
-      <CardContent className="space-y-4">
+    <Dialog>
+      <DialogTrigger asChild>{children}</DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle className="text-base md:text-lg">
+            Try the prediction demo
+          </DialogTitle>
+          <DialogDescription className="text-xs text-muted-foreground md:text-sm">
+            Paste a headline or short paragraph and see how TruthLens scores it.
+          </DialogDescription>
+        </DialogHeader>
+
         <div className="space-y-2">
           <Input
             placeholder="e.g. Scientists confirm water on Mars in new NASA report"
@@ -57,7 +67,7 @@ export default function AiDemo() {
         >
           {isLoading ? "Analyzing…" : "Run demo prediction"}
         </Button>
-      </CardContent>
-    </Card>
+      </DialogContent>
+    </Dialog>
   );
 }
