@@ -88,25 +88,49 @@ export default function Home() {
               </dd>
             </div>
           </div>
-          <div className="sm:col-span-6 p-4 rounded-md border hover:border-primary hover:bg-card transition duration-300 bg-accent/40">
-            <dt className="font-medium text-foreground">
-              Community discussion
-            </dt>
-            <dd>Threaded comments, likes, and reactions on every post.</dd>
+          <div className="sm:col-span-6 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden bg-accent/40 group">
+            <div className="relative h-42 sm:h-52 w-full mask-y-from-60% mask-x-from-96% select-none">
+              <Image
+                alt=""
+                height={800}
+                width={800}
+                src={"/grid.svg"}
+                className="absolute -top-10 -z-10 w-full h-auto"
+              />
+            </div>
+            <div className="h-24 sm:h-20 flex flex-col justify-end overflow-hidden px-4 pt-0 pb-4">
+              <dt className="font-medium text-base sm:text-lg text-foreground transition-all duration-500 group-hover:-translate-y-1 pt-4">
+                Community discussion
+              </dt>
+              <dd className="max-h-0 group-hover:max-h-12 overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out text-xs sm:text-sm text-muted-foreground">
+                Threaded comments, likes, and reactions on every post.
+              </dd>
+            </div>
           </div>
-          <div className="sm:col-span-6 p-4 rounded-md border hover:border-primary hover:bg-card transition duration-300 bg-accent/40">
-            <dt className="font-medium text-foreground">
-              Crowdsourced verification
-            </dt>
-            <dd>
-              Surface trustworthy sources and challenge misleading narratives
-              together.
-            </dd>
+          <div className="sm:col-span-6 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden bg-accent/40 group">
+            <div className="relative h-42 sm:h-52 w-full mask-y-from-60% mask-x-from-96% select-none">
+              <Image
+                alt=""
+                height={800}
+                width={800}
+                src={"/grid.svg"}
+                className="absolute -top-10 -z-10 w-full h-auto"
+              />
+            </div>
+            <div className="h-24 sm:h-20 flex flex-col justify-end overflow-hidden px-4 pt-0 pb-4">
+              <dt className="font-medium text-base sm:text-lg text-foreground transition-all duration-500 group-hover:-translate-y-1 pt-4">
+                Crowdsourced verification
+              </dt>
+              <dd className="max-h-0 group-hover:max-h-12 overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out text-xs sm:text-sm text-muted-foreground">
+                Surface trustworthy sources and challenge misleading narratives
+                together.
+              </dd>
+            </div>
           </div>
         </dl>
       </section>
 
-      <FeaturesSection/>
+      <FeaturesSection />
     </div>
   );
 }
