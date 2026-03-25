@@ -43,7 +43,7 @@ export function Navbar() {
               "transition-colors hover:text-foreground/90",
               pathname?.startsWith(link.href)
                 ? "font-medium text-foreground"
-                : "text-muted-foreground"
+                : "text-muted-foreground",
             )}
           >
             {link.label}
@@ -121,14 +121,6 @@ export function Navbar() {
                   <Newspaper className="h-4 w-4 text-primary" />
                   <SheetTitle>TruthLens</SheetTitle>
                 </div>
-                <Button
-                  variant="ghost"
-                  size="icon-xs"
-                  className="ml-auto"
-                  onClick={() => setOpen(false)}
-                >
-                  <X className="h-4 w-4" />
-                </Button>
               </SheetHeader>
               <div className="flex flex-col gap-4">
                 {navLinks.map((link) => (
@@ -140,7 +132,7 @@ export function Navbar() {
                       "text-sm font-medium",
                       pathname?.startsWith(link.href)
                         ? "text-foreground"
-                        : "text-muted-foreground"
+                        : "text-muted-foreground",
                     )}
                   >
                     {link.label}
@@ -178,11 +170,7 @@ export function Navbar() {
                       >
                         <Link href="/login">Log in</Link>
                       </Button>
-                      <Button
-                        size="sm"
-                        asChild
-                        onClick={() => setOpen(false)}
-                      >
+                      <Button size="sm" asChild onClick={() => setOpen(false)}>
                         <Link href="/signup">Sign up</Link>
                       </Button>
                     </>
@@ -200,4 +188,3 @@ export function Navbar() {
     </header>
   );
 }
-

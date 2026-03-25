@@ -3,8 +3,6 @@
 import { ReactNode, useState } from "react";
 import { PredictionBadge } from "./prediction-badge";
 import { Button } from "./ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Input } from "./ui/input";
 import { Prediction } from "@/types/prediction";
 import { runPrediction } from "@/lib/api";
 import { toast } from "sonner";
@@ -16,6 +14,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
+import { Textarea } from "./ui/textarea";
 
 export default function AiDemo({ children }: { children: ReactNode }) {
   const [demoText, setDemoText] = useState("");
@@ -37,7 +36,7 @@ export default function AiDemo({ children }: { children: ReactNode }) {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="min-w-[600px]">
+      <DialogContent className="sm:min-w-150">
         <DialogHeader>
           <DialogTitle className="text-base md:text-lg">
             Try the prediction demo
@@ -48,7 +47,7 @@ export default function AiDemo({ children }: { children: ReactNode }) {
         </DialogHeader>
 
         <div className="space-y-2">
-          <Input
+          <Textarea
             placeholder="e.g. Scientists confirm water on Mars in new NASA report"
             value={demoText}
             onChange={(event) => setDemoText(event.target.value)}
