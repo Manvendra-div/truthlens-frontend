@@ -31,7 +31,7 @@ export default function Home() {
             <AiDemo>
               <Button
                 size="lg"
-                className="bg-linear-to-r from-primary to-indigo-700 bg-[url('/noise.svg')] bg-cover bg-center"
+                className="bg-linear-to-r from-primary to-indigo-700 bg-[url('/noise.svg')] bg-center"
               >
                 Try AI Prediction <ArrowUpRight/>
               </Button>
