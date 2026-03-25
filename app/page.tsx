@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { PredictionBadge } from "@/components/prediction-badge";
 import Link from "next/link";
-import { ArrowUpRight, Newspaper } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Newspaper } from "lucide-react";
 import Image from "next/image";
 import AiDemo from "@/components/ai-demo";
 import FeaturesSection from "@/components/feature-section";
@@ -27,20 +27,20 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-4">
             <AiDemo>
               <Button
                 size="lg"
-                className="px-6 bg-linear-to-r from-primary to-indigo-500 outline-2 outline-offset-4 outline-primary"
+                className="bg-linear-to-r from-primary to-indigo-700 bg-[url('/noise.svg')] bg-cover bg-center"
               >
                 Try AI Prediction <ArrowUpRight/>
               </Button>
             </AiDemo>
-            <Button asChild size="lg" className="px-6">
+            <Button asChild size="lg">
               <Link href="/create">Start an article</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="px-6">
-              <Link href="/feed">View community feed</Link>
+            <Button asChild variant="link" size="lg">
+              <Link href="/feed">View community feed <ArrowRight/></Link>
             </Button>
           </div>
         </div>

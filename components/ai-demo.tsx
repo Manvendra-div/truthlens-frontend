@@ -37,7 +37,7 @@ export default function AiDemo({ children }: { children: ReactNode }) {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent>
+      <DialogContent className="min-w-[600px]">
         <DialogHeader>
           <DialogTitle className="text-base md:text-lg">
             Try the prediction demo
