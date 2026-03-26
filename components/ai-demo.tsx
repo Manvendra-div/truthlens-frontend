@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { PredictionBadge } from "./prediction-badge";
 import { Button } from "./ui/button";
 import { Prediction } from "@/types/prediction";
@@ -20,6 +20,7 @@ export default function AiDemo({ children }: { children: ReactNode }) {
   const [demoText, setDemoText] = useState("");
   const [prediction, setPrediction] = useState<Prediction | undefined>();
   const [isLoading, setIsLoading] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const handleDemoPredict = async () => {
     if (!demoText.trim()) return;
@@ -33,8 +34,13 @@ export default function AiDemo({ children }: { children: ReactNode }) {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    setPrediction(undefined);
+  }, [open]);
+
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:min-w-150">
         <DialogHeader>
@@ -53,10 +59,7 @@ export default function AiDemo({ children }: { children: ReactNode }) {
             onChange={(event) => setDemoText(event.target.value)}
           />
         </div>
-        <div className="space-y-2 rounded-lg bg-muted/40 p-3 text-xs md:text-sm">
-          <p className="mb-1 font-medium uppercase tracking-wide text-muted-foreground">
-            AI verdict
-          </p>
+        <div className="space-y-2 text-xs md:text-sm">
           <PredictionBadge decoy={true} prediction={prediction} />
         </div>
         <Button
