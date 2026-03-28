@@ -31,16 +31,25 @@ export default function Home() {
             <AiDemo>
               <Button
                 size="lg"
-                className="bg-linear-to-r from-primary to-indigo-700 bg-[url('/noise.svg')] bg-center"
+                className="bg-linear-to-b relative from-primary to-indigo-700 overflow-hidden"
               >
-                Try AI Prediction <ArrowUpRight/>
+                Try AI Prediction <ArrowUpRight />
+                <Image
+                  alt="Noise"
+                  height={100}
+                  width={100}
+                  src={"/noise.svg"}
+                  className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 opacity-40 w-full"
+                />
               </Button>
             </AiDemo>
             <Button asChild size="lg">
               <Link href="/create">Start an article</Link>
             </Button>
             <Button asChild variant="link" size="lg">
-              <Link href="/feed">View community feed <ArrowRight/></Link>
+              <Link href="/feed">
+                View community feed <ArrowRight />
+              </Link>
             </Button>
           </div>
         </div>
