@@ -13,7 +13,9 @@ export default function Home() {
       <section className="grid grid-cols-1 items-center gap-10 justify-center">
         <div className="space-y-6">
           <div className="gap-3 text-balance flex flex-col justify-center items-center text-center">
-            <Badge className="ring-2 bg-primary/10 font-medium ring-indigo-400 text-xs sm:text-sm">AI + community to fact-check your feed</Badge>
+            <Badge className="ring-1 bg-primary/10 font-medium ring-primary text-xs sm:text-sm">
+              AI + community to fact-check your feed
+            </Badge>
             <h1 className="text-2xl font-semibold tracking-tight md:text-6xl">
               Shine a light on misinformation with{" "}
               <span className="text-primary">TruthLens</span>.
@@ -53,13 +55,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-4 mt-10 sm:mt-20 mb-6 sm:mb-8">
+      <section className="flex flex-col gap-4 mt-10 sm:mt-20 mb-6 sm:mb-8 z-10">
         <h1 className="text-xl font-semibold tracking-tight sm:text-3xl text-muted-foreground">
           Everything you need to spot the{" "}
           <span className="text-foreground">truth</span>
         </h1>
         <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-muted-foreground md:text-sm">
-          <div className="sm:col-span-12 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden bg-accent/40 group">
+          <div className="sm:col-span-12 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden bg-accent/60 group">
             <div className="relative h-42 sm:h-52 w-full mask-y-from-60% mask-x-from-96% select-none">
               <Image
                 alt=""
