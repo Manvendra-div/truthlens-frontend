@@ -5,17 +5,16 @@ import { ArrowRight, ArrowUpRight, Newspaper } from "lucide-react";
 import Image from "next/image";
 import AiDemo from "@/components/ai-demo";
 import FeaturesSection from "@/components/feature-section";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   return (
     <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 md:px-6 md:py-14">
       <section className="grid grid-cols-1 items-center gap-10 justify-center">
         <div className="space-y-6">
-          <div className="space-y-3">
-            <p className="inline-flex rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-primary/10">
-              AI + community to fact-check your feed
-            </p>
-            <h1 className="text-3xl font-semibold tracking-tight md:text-6xl">
+          <div className="gap-3 text-balance flex flex-col justify-center items-center text-center">
+            <Badge className="ring-2 bg-primary/10 font-medium ring-indigo-400 text-xs sm:text-sm">AI + community to fact-check your feed</Badge>
+            <h1 className="text-2xl font-semibold tracking-tight md:text-6xl">
               Shine a light on misinformation with{" "}
               <span className="text-primary">TruthLens</span>.
             </h1>
@@ -27,7 +26,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 justify-center">
             <AiDemo>
               <Button
                 size="lg"
