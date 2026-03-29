@@ -61,7 +61,7 @@ export default function Home() {
           <span className="text-foreground">truth</span>
         </h1>
         <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-muted-foreground md:text-sm">
-          <div className="sm:col-span-12 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden bg-accent/60 group">
+          <div className="sm:col-span-12 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden group">
             <div className="relative h-42 sm:h-52 w-full mask-y-from-60% mask-x-from-96% select-none">
               <Image
                 alt=""
@@ -105,14 +105,14 @@ export default function Home() {
               </dd>
             </div>
           </div>
-          <div className="sm:col-span-6 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden bg-accent/40 group">
+          <div className="sm:col-span-6 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden group">
             <div className="relative h-42 sm:h-52 w-full mask-y-from-60% mask-x-from-96% select-none">
               <Image
                 alt=""
                 height={800}
                 width={800}
                 src={"/grid.svg"}
-                className="absolute -top-10 -z-10 w-full h-auto"
+                className="absolute -top-10 -z-10 w-full h-auto group-hover:scale-110 transition-all duration-300"
               />
             </div>
             <div className="h-24 sm:h-20 flex flex-col justify-end overflow-hidden px-4 pt-0 pb-4">
@@ -124,14 +124,14 @@ export default function Home() {
               </dd>
             </div>
           </div>
-          <div className="sm:col-span-6 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden bg-accent/40 group">
+          <div className="sm:col-span-6 rounded-md border hover:border-primary hover:bg-card transition-all duration-300 overflow-hidden group">
             <div className="relative h-42 sm:h-52 w-full mask-y-from-60% mask-x-from-96% select-none">
               <Image
                 alt=""
                 height={800}
                 width={800}
                 src={"/grid.svg"}
-                className="absolute -top-10 -z-10 w-full h-auto"
+                className="absolute -top-10 -z-10 w-full h-auto group-hover:scale-110 transition-all duration-300"
               />
             </div>
             <div className="h-24 sm:h-20 flex flex-col justify-end overflow-hidden px-4 pt-0 pb-4">
