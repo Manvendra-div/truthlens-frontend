@@ -21,7 +21,7 @@ export default function Home() {
             <Badge className="ring-1 bg-primary/10 font-medium ring-primary text-xs sm:text-sm">
               AI + community to fact-check your feed
             </Badge>
-            <h1 className="bg-opacity-50 bg-linear-to-b from-neutral-500 to-neutral-800  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text text-center text-4xl font-semibold text-transparent md:text-7xl">
+            <h1 className="bg-opacity-50 z-10 bg-linear-to-b from-neutral-500 to-neutral-800  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text text-center text-4xl font-semibold text-transparent md:text-7xl">
               Shine a light on misinformation with{" "}
               <span className="text-primary">TruthLens</span>.
             </h1>
