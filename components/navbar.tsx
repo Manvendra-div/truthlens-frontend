@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
-import { Menu, Newspaper, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, Newspaper } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
@@ -26,6 +26,16 @@ export function Navbar() {
   const router = useRouter();
   const { user, logout } = useAuth();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleLogout = () => {
     logout();
@@ -91,7 +101,14 @@ export function Navbar() {
   );
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
+    <header
+      className={cn(
+        "sticky top-0 z-40 transition-all duration-300 ease-in-out",
+        scrolled
+          ? "border-b bg-background/60 backdrop-blur-lg"
+          : "border-b border-transparent bg-transparent",
+      )}
+    >
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 md:px-6">
         <Link href="/" className="flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -101,7 +118,7 @@ export function Navbar() {
             <span className="text-sm font-semibold tracking-tight">
               TruthLens
             </span>
-            <span className="hidden text-xs text-muted-foreground sm:inline">
+            <span className="hidden text-xs text-foreground/60 sm:inline">
               See the truth behind the story
             </span>
           </div>

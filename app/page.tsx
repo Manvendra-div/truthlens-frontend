@@ -6,17 +6,22 @@ import Image from "next/image";
 import AiDemo from "@/components/ai-demo";
 import FeaturesSection from "@/components/feature-section";
 import { Badge } from "@/components/ui/badge";
+import { Spotlight } from "@/components/ui/spotlight";
 
 export default function Home() {
   return (
-    <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 md:px-6 md:py-14">
-      <section className="grid grid-cols-1 items-center gap-10 justify-center">
+    <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 md:px-6 md:py-14">
+      <section className="relative grid grid-cols-1 items-center gap-10 justify-center">
+        <Spotlight
+          className="-top-40 left-0 md:-top-20 md:left-60"
+          fill="var(--primary)"
+        />
         <div className="space-y-6">
           <div className="gap-3 text-balance flex flex-col justify-center items-center text-center">
             <Badge className="ring-1 bg-primary/10 font-medium ring-primary text-xs sm:text-sm">
               AI + community to fact-check your feed
             </Badge>
-            <h1 className="text-2xl font-semibold tracking-tight md:text-6xl">
+            <h1 className="bg-opacity-50 bg-linear-to-b from-neutral-500 to-neutral-800  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text text-center text-4xl font-semibold text-transparent md:text-7xl">
               Shine a light on misinformation with{" "}
               <span className="text-primary">TruthLens</span>.
             </h1>
