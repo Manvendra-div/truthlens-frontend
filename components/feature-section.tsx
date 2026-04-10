@@ -2,11 +2,13 @@
 import { useState } from "react";
 import { Cuboid, Users2, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Badge } from "./ui/badge";
 
 const tabs = {
   newsroom: {
     tag: "For publishers",
-    tagClass: "bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300 border-1 border-blue-700 dark:border-blue-300",
+    tagClass:
+      "bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300 border-1 border-blue-700 dark:border-blue-300",
     title:
       "Track breaking stories, detect coordinated misinformation, and share transparent evidence with your audience.",
     body: "TruthLens plugs directly into your workflow — flag suspicious articles before publication, monitor trending claims in real time, and build reader trust with transparent AI credibility scores.",
@@ -75,7 +77,7 @@ export default function FeaturesSection() {
               key={key}
               onClick={() => switchTab(key)}
               className={cn(
-                "flex items-center justify-center gap-2 p-3 border rounded-md text-sm font-medium transition-all duration-200",
+                "flex items-center justify-center gap-2 p-3 bg-linear-to-b from-background to-transparent border rounded-md text-sm font-medium transition-all duration-200",
                 active === key
                   ? "bg-background border-foreground/30 hover:border-primary text-foreground"
                   : "bg-accent/40 border-border text-muted-foreground hover:bg-accent hover:text-foreground",
@@ -88,19 +90,18 @@ export default function FeaturesSection() {
 
         <div
           className={cn(
-            "border rounded-lg p-6 min-h-37 transition-all duration-200",
+            "border rounded-lg p-6 min-h-37 transition-all duration-200 bg-linear-to-b from-card to-transparent",
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2",
           )}
         >
-          <span
-            className={cn(
-              "inline-flex text-xs font-medium px-3 py-1 rounded-full mb-3",
-              t.tagClass,
-            )}
+          <Badge
+            className={cn("inline-flex text-xs font-medium mb-3", t.tagClass)}
           >
             {t.tag}
-          </span>
-          <p className="text-base font-medium leading-relaxed mb-2">{t.title}</p>
+          </Badge>
+          <p className="text-base font-medium leading-relaxed mb-2">
+            {t.title}
+          </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             {t.body}
           </p>
@@ -108,7 +109,12 @@ export default function FeaturesSection() {
             {t.stats.map((s, i) => (
               <div
                 key={s.label}
-                className={cn(i != t.stats.length - 1 ? "border-b sm:border-b-0 sm:border-r" : "","flex flex-col justify-center items-center p-2.5")}
+                className={cn(
+                  i != t.stats.length - 1
+                    ? "border-b sm:border-b-0 sm:border-r"
+                    : "",
+                  "flex flex-col justify-center items-center p-2.5",
+                )}
               >
                 <div className="text-xl font-medium">{s.value}</div>
                 <div className="text-xs text-muted-foreground mt-0.5">
