@@ -12,16 +12,16 @@ export const apiClient = axios.create({
   withCredentials: true,
 });
 
-apiClient.interceptors.request.use((config) => {
-  if (typeof window !== "undefined") {
-    const token = window.localStorage.getItem("tl_access_token");
-    if (token) {
-      config.headers = config.headers ?? {};
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-  }
-  return config;
-});
+// apiClient.interceptors.request.use((config) => {
+//   if (typeof window !== "undefined") {
+//     const token = window.localStorage.getItem("tl_access_token");
+//     if (token) {
+//       config.headers = config.headers ?? {};
+//       config.headers.Authorization = `Bearer ${token}`;
+//     }
+//   }
+//   return config;
+// });
 
 type AuthResponse = {
   access_token: string;
