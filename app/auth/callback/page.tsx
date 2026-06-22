@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useAuthStore } from "@/store/auth-store";
+import { apiClient } from "@/lib/api";
 
 export default function AuthCallbackPage() {
   const { data: session, status } = useSession();
@@ -33,21 +34,12 @@ export default function AuthCallbackPage() {
       const exchange = async () => {
         try {
           console.log("[Callback] Sending token to backend...");
-          const res = await fetch(
-            `${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/google`,
-            {
-              method: "POST",
-              credentials: "include",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ token: session.idToken }),
-            }
-          );
+          const { data, status } = await apiClient.post("/auth/google", {
+            token: session.idToken,
+          });
 
-          console.log("[Callback] Backend status:", res.status);
-          const body = await res.json();
-          console.log("[Callback] Backend response:", body);
-
-          if (!res.ok) throw new Error(JSON.stringify(body));
+          console.log("[Callback] Backend status:", status);
+          console.log("[Callback] Backend response:", data);
 
           await initialize();
           router.replace("/feed");
