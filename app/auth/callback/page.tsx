@@ -38,8 +38,15 @@ export default function AuthCallbackPage() {
             token: session.idToken,
           });
 
+          console.log("[Callback] access_token:", data.access_token);
           console.log("[Callback] Backend status:", status);
           console.log("[Callback] Backend response:", data);
+
+          if (!data.access_token) {
+            console.error("[Callback] No access_token in response", data);
+            router.replace("/login");
+            return;
+          }
 
           // ← add these two lines
           localStorage.setItem("access_token", data.access_token);
