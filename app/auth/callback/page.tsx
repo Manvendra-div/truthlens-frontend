@@ -41,6 +41,11 @@ export default function AuthCallbackPage() {
           console.log("[Callback] Backend status:", status);
           console.log("[Callback] Backend response:", data);
 
+          // ← add these two lines
+          localStorage.setItem("access_token", data.access_token);
+          apiClient.defaults.headers.common["Authorization"] =
+            `Bearer ${data.access_token}`;
+
           await initialize();
           router.replace("/feed");
         } catch (err) {

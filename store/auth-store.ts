@@ -19,13 +19,19 @@ export const useAuthStore = create<AuthState>((set) => ({
   accessToken: null,
 
   initialize: async () => {
-    try {
-      const user = await getCurrentUser()
-      set({ user })
-    } catch {
-      set({ user: null })
-    }
-  },
+  const token = localStorage.getItem("access_token");
+  if (!token) {
+    set({ user: null, accessToken: null });
+    return;
+  }
+  try {
+    const user = await getCurrentUser();  // interceptor handles the header
+    set({ user, accessToken: token });
+  } catch {
+    localStorage.removeItem("access_token");
+    set({ user: null, accessToken: null });
+  }
+},
 
   login: ({ user }) => {
     set({ user })

@@ -9,19 +9,16 @@ const API_BASE_URL =
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
-  withCredentials: true,
+  withCredentials: false, 
 });
 
-// apiClient.interceptors.request.use((config) => {
-//   if (typeof window !== "undefined") {
-//     const token = window.localStorage.getItem("tl_access_token");
-//     if (token) {
-//       config.headers = config.headers ?? {};
-//       config.headers.Authorization = `Bearer ${token}`;
-//     }
-//   }
-//   return config;
-// });
+apiClient.interceptors.request.use((config) => {
+  if (typeof window !== "undefined") {
+    const token = localStorage.getItem("access_token");
+    if (token) config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
 
 type AuthResponse = {
   access_token: string;
