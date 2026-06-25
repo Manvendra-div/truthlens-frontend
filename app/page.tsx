@@ -11,7 +11,7 @@ import { Spotlight } from "@/components/ui/spotlight";
 export default function Home() {
   return (
     <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 md:px-6 md:py-14">
-      <section className="relative grid grid-cols-1 items-center gap-10 justify-center">
+      <section className="relative grid grid-cols-1 items-center gap-10 justify-center min-h-[40dvh]">
         <Spotlight
           className="-top-40 left-0 md:-top-20 md:left-60"
           fill="var(--primary)"
@@ -61,7 +61,7 @@ export default function Home() {
         </div>
       </section>
       <section className="flex flex-col gap-4 mt-10 sm:mt-20 mb-6 sm:mb-8 z-10">
-        <h1 className="text-xl font-semibold tracking-tight sm:text-3xl text-muted-foreground">
+        <h1 className="text-2xl font-semibold tracking-tight sm:text-4xl text-muted-foreground">
           Everything you need to spot the{" "}
           <span className="text-foreground">truth</span>
         </h1>
